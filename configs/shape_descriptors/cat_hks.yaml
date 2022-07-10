@@ -1,0 +1,36 @@
+seed: 0
+data:
+  preproc_data_path_train: data/preprocessed/cat_dataset_v2_tiny/train
+  preproc_data_path_eval: data/preprocessed/cat_dataset_v2_tiny/val
+  preproc_data_path_test: data/preprocessed/cat_dataset_v2_tiny/test
+  eigenfunctions_path: data/shape_descriptors/cat_hks_352.npy
+  mesh_path: data/cat_rescaled_rotated/12221_Cat_v1_l3.obj
+  img_height: 512
+  img_width: 512
+  # Images which are completely rendered after the evaluation step (not part of the training dataset)
+  eval_render_input_paths:
+      - data/cat_dataset_v2_tiny/cat_vis000
+      - data/cat_dataset_v2_tiny/cat_vis001
+      - data/cat_dataset_v2_tiny/cat_vis002
+      - data/cat_dataset_v2_tiny/cat_vis003
+      - data/cat_dataset_v2_tiny/cat_vis004
+  eval_render_img_names:
+      - cat_vis000
+      - cat_vis001
+      - cat_vis002
+      - cat_vis003
+      - cat_vis004
+model:
+  k: 352
+  num_layers: 6
+  mlp_hidden_dim: 128
+  skip_layer_idx: 3
+training:
+  out_dir: out/shape_descriptors/cat_hks
+  batch_size: 4096
+  lr: 0.0001
+  loss_type: L1
+  render_every: 5
+  print_every: 5
+  epochs: 1000
+  checkpoint_every: 5

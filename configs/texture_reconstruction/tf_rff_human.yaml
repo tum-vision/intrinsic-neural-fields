@@ -1,0 +1,44 @@
+seed: 0
+data:
+  preproc_data_path_train: data/preprocessed/human_dataset_v2_tiny/train
+  preproc_data_path_eval: data/preprocessed/human_dataset_v2_tiny/val
+  preproc_data_path_test: data/preprocessed/human_dataset_v2_tiny/test
+  eigenfunctions_path: data/preprocessed/human_efuncs/eigenfunctions_cotan_kmax4096_skip_first_efuncs.npy
+  mesh_path: data/human/RUST_3d_Low1.obj
+  use_tensor_dataset: False
+  img_height: 512
+  img_width: 512
+  # Images which are completely rendered after the evaluation step (not part of the training dataset)
+  eval_render_input_paths:
+      - data/human_dataset_v2_tiny/human_vis000
+      - data/human_dataset_v2_tiny/human_vis001
+      - data/human_dataset_v2_tiny/human_vis002
+      - data/human_dataset_v2_tiny/human_vis003
+      - data/human_dataset_v2_tiny/human_vis004
+  eval_render_img_names:
+      - human_vis000
+      - human_vis001
+      - human_vis002
+      - human_vis003
+      - human_vis004
+model:
+  # EXTRINSIC - RFF
+  feature_strategy: rff
+  # NOTE: in_dim = 510 * 2 (sin, cos) + 3 (include_input) = 1023
+  embed_include_input: True
+  k: 510
+  embed_std: 8
+
+  num_layers: 6
+  mlp_hidden_dim: 128
+  skip_layer_idx: 3
+  batchnorm: False
+training:
+  out_dir: out/texture_recon/tf_rff_human
+  batch_size: 4096
+  lr: 0.0001
+  loss_type: L1
+  render_every: 5
+  print_every: 1
+  epochs: 1000
+  checkpoint_every: 25
