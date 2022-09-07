@@ -134,6 +134,19 @@ Custom datasets can be used with the existing code if they have the following fo
             |_ ... (the rest does not matter)
         |_ ...
 
+
+## BigBIRD Dataset
+
+The BigBIRD dataset has its own scripts due to its larger size (26G). Please run the following from this folder
+```
+bigbird/download_data.sh
+preprocessing_scripts/preprocess_bigbird.sh
+training_scripts/train_bigbird.sh
+```
+You might want to parallelize `preprocess_bigbird.sh` and `train_bigbird.sh` over the 10 scenes in the dataset. However, we could not provide a convenient script for this as it depends on the exact setup, e.g. SLURM.
+
+The BigBIRD dataset also includes two notebooks: `bigbird/PreprocessFiles.ipynb` and `bigbird/AutogenerateConfigFiles.ipynb`. The first is needed to preprocess the data which includes creating new object masks with [ClipDrop.co](https://clipdrop.co/) because the original masks are not sufficiently accurate. This step is sadly semi-manual as we did not have access to the clipdrpo API at the time. The second notebook autogenerates config files. We have included all files in the download so that you do not have to run these notebooks. However, we include the notebooks so that all steps can be reproduced and so that it is possible to preprocess further BigBIRD scenes.
+
 ## License
 
 The code is provided under a BSD 3-clause license. See the LICENSE file for details. Note also the different licenses for thirdparty submodules.
