@@ -145,7 +145,7 @@ training_scripts/train_bigbird.sh
 ```
 You might want to parallelize `preprocess_bigbird.sh` and `train_bigbird.sh` over the 10 scenes in the dataset. However, we could not provide a convenient script for this as it depends on the exact setup, e.g. SLURM.
 
-The BigBIRD dataset also includes two notebooks: `bigbird/PreprocessFiles.ipynb` and `bigbird/AutogenerateConfigFiles.ipynb`. The first is needed to preprocess the data which includes creating new object masks with [ClipDrop.co](https://clipdrop.co/) because the original masks are not sufficiently accurate. This step is sadly semi-manual as we did not have access to the clipdrpo API at the time. The second notebook autogenerates config files. We have included all files in the download so that you do not have to run these notebooks. However, we include the notebooks so that all steps can be reproduced and so that it is possible to preprocess further BigBIRD scenes.
+The BigBIRD dataset also includes two notebooks: `bigbird/PreprocessFiles.ipynb` and `bigbird/AutogenerateConfigFiles.ipynb`. The first is needed to preprocess the data which includes creating new object masks with [ClipDrop.co](https://clipdrop.co/) because the original masks are not sufficiently accurate. This step is sadly semi-manual as we did not have access to the clipdrop API at the time. The second notebook autogenerates config files. We have included all files in the download/git so that you do not have to run these notebooks. However, we include the notebooks so that all steps can be reproduced and so that it is possible to process further BigBIRD scenes.
 
 ## License
 
