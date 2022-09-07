@@ -4,7 +4,7 @@ then
 	exit 1
 fi
 
-if [ ! -d ".data" ]
+if [ ! -d "data" ]
 then
 	echo "The directory data does not exist. Either (a) create it or (b) call download_data.sh first."
 	exit 1
