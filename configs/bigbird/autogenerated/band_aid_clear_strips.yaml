@@ -1,0 +1,37 @@
+data:
+  eigenfunctions_path: data/preprocessed/bigbird/band_aid_clear_strips/eigenfunctions_robust_kmax4096_skip_first_efuncs.npy
+  eval_render_img_names:
+  - N1_30
+  eval_render_input_paths:
+  - data/bigbird/processed/band_aid_clear_strips/N1_030
+  img_height: 2848
+  img_width: 4272
+  mesh_path: data/preprocessed/bigbird/band_aid_clear_strips/mesh_world.ply
+  preproc_data_path_eval: data/preprocessed/bigbird/band_aid_clear_strips/val
+  preproc_data_path_test: data/preprocessed/bigbird/band_aid_clear_strips/test
+  preproc_data_path_train: data/preprocessed/bigbird/band_aid_clear_strips/train
+  use_tensor_dataset: false
+method: intrinsic-nerf
+model:
+  batchnorm: false
+  k: 4096
+  mlp_hidden_dim: 128
+  num_layers: 6
+  skip_layer_idx: 3
+  view_dependence:
+    bottleneck_vec_dim: 128
+    directional_hidden_dim: 64
+    embed_size: 4
+    in_dim_view_dir: 3
+    include_view_dir: false
+    strategy: extrinsic
+training:
+  batch_size: 16384
+  checkpoint_every: 10
+  epochs: 500
+  loss_type: L1
+  lr: 0.0002
+  out_dir: out/bigbird/band_aid_clear_strips/ours_extrinsic_large_bs16384_k4096_lr2e-4
+  print_every: 5
+  render_every: 5
+  use_lr_scheduler: true

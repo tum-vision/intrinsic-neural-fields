@@ -1,0 +1,48 @@
+method: intrinsic-nerf
+data:
+  ### 30 Views 360 deg
+  preproc_data_path_train: /usr/wiss/koestlel/projects/intrinsic-nerf/intrinsic-nerf/data/bigbird_eccv/3m_high_tack_spray_adhesive/N1_60_views/train
+  preproc_data_path_eval: /usr/wiss/koestlel/projects/intrinsic-nerf/intrinsic-nerf/data/bigbird_eccv/3m_high_tack_spray_adhesive/N1_60_views/val
+  preproc_data_path_test: /usr/wiss/koestlel/projects/intrinsic-nerf/intrinsic-nerf/data/bigbird_eccv/3m_high_tack_spray_adhesive/N1_60_views/test
+  eigenfunctions_path: /usr/wiss/koestlel/projects/intrinsic-nerf/intrinsic-nerf/data/bigbird_eccv/3m_high_tack_spray_adhesive/eigenfunctions_robust_kmax4096_skip_first_efuncs.npy
+  mesh_path: /usr/wiss/koestlel/projects/intrinsic-nerf/intrinsic-nerf/data/bigbird_eccv/3m_high_tack_spray_adhesive/mesh_world.ply
+  use_tensor_dataset: False
+  img_height: 2848
+  img_width: 4272
+  eval_render_input_paths:
+      - /storage/user/koestlel/intrinsic_neural_fields/datasets/bigbird_eccv_rebuttal_processed/3m_high_tack_spray_adhesive/N1_030
+  eval_render_img_names:
+      - N1_30
+model:
+  k: 4096
+  num_layers: 6
+  mlp_hidden_dim: 128
+  skip_layer_idx: 3
+  batchnorm: False
+  view_dependence:
+    bottleneck_vec_dim: 128
+    include_view_dir: False
+    directional_hidden_dim: 64
+    ############################
+    # Extrinsic Specifics
+    strategy: extrinsic
+    in_dim_view_dir: 3
+    embed_size: 4  # 3 * (4 * 2) = 24
+    # Intrinsic
+    # strategy: intrinsic
+    # in_dim_view_dir: 1
+    # embed_size: 4  # 4 * 2 = 8
+    ############################
+training:
+  out_dir: /storage/user/koestlel/intrinsic_nerf/bigbird_eccv/3m_high_tack_spray_adhesive/N1_60_views/ours_extrinsic_large_bs16384_k4096_lr2e-4
+  # out_dir: /storage/user/koestlel/intrinsic_nerf/bigbird_big/detergent/N1_60_views/debug
+  batch_size: 16384  # 4096
+  lr: 0.0002 # 0.0001
+  # batch_size: 4096
+  # lr: 0.0001
+  use_lr_scheduler: True
+  loss_type: L1
+  render_every: 5
+  print_every: 5
+  checkpoint_every: 10
+  epochs: 500

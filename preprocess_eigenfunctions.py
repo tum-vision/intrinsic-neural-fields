@@ -1,4 +1,5 @@
 import os
+from os.path import abspath
 import argparse
 import numpy as np
 
@@ -42,7 +43,8 @@ def main():
     # Symlink of mesh
     mesh_dst_path = os.path.join(args.out_dir, os.path.basename(args.path_to_mesh))
     if not os.path.exists(mesh_dst_path):
-        os.symlink(src=args.path_to_mesh, dst=mesh_dst_path)
+        # TODO: Could make relative for portability
+        os.symlink(src=abspath(args.path_to_mesh), dst=mesh_dst_path)
 
     print("Done.")
 
