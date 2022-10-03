@@ -22,7 +22,8 @@
 </p>
 
 <p align="center">
-    <a href="https://arxiv.org/abs/2203.07967">arXiv</a>
+<a href="https://arxiv.org/abs/2203.07967">arXiv</a> |
+<a href="https://youtu.be/EWLbORx8C4U">Video</a>
 </p>
 
 ![teaser](assets/teaser.png)
