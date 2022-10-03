@@ -36,8 +36,8 @@
 ## Code and Data Release
 
 - [X] 📣 Release main code and data
-- [ ] Release local triangulation code as a Python package for ray-pointcloud intersection
-- [ ] Publish BigBIRD configs, data, and scripts
+- [X] Release local triangulation code as a Python package for ray-pointcloud intersection. Has been merged into [nmwsharp/potpourri3d](https://github.com/nmwsharp/potpourri3d/commit/adb76f1566bba2ef2bc2d1a6e6c57346796c89f8).
+- [X] Publish BigBIRD configs, data, and scripts. Pushed into banch [bigbird](https://github.com/tum-vision/intrinsic-neural-fields/tree/bigbird) and will be merged into master after aditional checks.
 
 ## Data
 
