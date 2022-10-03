@@ -27,7 +27,12 @@
 <a href="https://lukaskoestler.com/static/0927_md5=bcec45fabae80b15c8ab7f45cb3c31e6.pdf">Poster</a>
 </p>
 
+<p>&nbsp;</p>
+
 ![teaser](assets/teaser.png)
+<p align="justify"><sub>(a) Overview of our method. We use the eigenfunctions of the Laplace- Beltrami operator (LBO) at each point as a point embedding. This overcomes the spectral bias of the multilayer perceptron (MLP), and hence the combined intrinsic neural field can represent a high-frequency function on the surface. Notice that p can be inside a triangle, and the function is clearly more detailed than the discretization (insets). (b) An intrinsic neural texture field trained on one shape (top) can be transferred to a new shape (bottom) without retraining. (c) Due to our intrinsic approach (LBO eigenfunctions) local geometry is maintained in close but separate parts, whereas an extrinsic approach (Random Fourier Features) shows bleeding artifacts when trained with sparse supervision.</sub></p>
+
+<p>&nbsp;</p>
 
 ## Abstract
 
