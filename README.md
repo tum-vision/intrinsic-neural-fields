@@ -23,7 +23,8 @@
 
 <p align="center">
 <a href="https://arxiv.org/abs/2203.07967">arXiv</a> |
-<a href="https://youtu.be/EWLbORx8C4U">Video</a>
+<a href="https://youtu.be/EWLbORx8C4U">Video</a> |
+<a href="https://lukaskoestler.com/static/0927_md5=bcec45fabae80b15c8ab7f45cb3c31e6.pdf">Poster</a>
 </p>
 
 ![teaser](assets/teaser.png)
