@@ -46,6 +46,14 @@
 - [X] Release local triangulation code as a Python package for ray-pointcloud intersection. Has been merged into [nmwsharp/potpourri3d](https://github.com/nmwsharp/potpourri3d/commit/adb76f1566bba2ef2bc2d1a6e6c57346796c89f8).
 - [X] Publish BigBIRD configs, data, and scripts. Pushed into banch [bigbird](https://github.com/tum-vision/intrinsic-neural-fields/tree/bigbird) and will be merged into master after aditional checks.
 
+## Related Work
+
+The following papers explore ideas similar to the ones presented within our work and will be referenced in an updated version of our arxiv paper. If there is another paper missing from the list, please reach out to us and we will add it. Papers are ordered by the initial publication date on arxiv. We believe that the variety of papers shows the potential of the underlying idea across a range of applications.
+
+- [Sign and Basis Invariant Networks for Spectral Graph Representation Learning](https://arxiv.org/abs/2202.13013)
+- [Generalised Implicit Neural Representations](https://arxiv.org/abs/2205.15674)
+- [Δ -PINNs: physics-informed neural networks on complex geometries](https://arxiv.org/abs/2209.03984)
+
 ## Data
 
 The data for the experiments can be downloaded by running the following command:
